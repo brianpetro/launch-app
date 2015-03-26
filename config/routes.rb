@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  get 'users/create'
 
-  get 'home/index'
+  root 'home#index'
+
+  post 'users/create'
+  get 'confirm/user/:signature' => 'users#confirm', as: 'confirm_user'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
