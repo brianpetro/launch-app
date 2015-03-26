@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  confirmed: false
+  tracker: MyString
+  split_test_id: 1
+
+two:
+  email: MyString
+  confirmed: false
+  tracker: MyString
+  split_test_id: 1
