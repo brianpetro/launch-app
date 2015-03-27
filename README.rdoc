@@ -5,5 +5,7 @@ Local api keys are kept in a '.env' file that is not committed to the git repo. 
 
 Production api key should be handled responsibly(use 'heroku config:set' feature) and not commited to git.
 
+=== Sass/Scss is used for CSS assets
+
 === Split Testing
 Split tests are run by injecting a piece of JavaScript that adjusts the page as required.
