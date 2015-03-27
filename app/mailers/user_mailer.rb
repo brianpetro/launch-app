@@ -8,7 +8,7 @@ class UserMailer < ApplicationMailer
   def confirm
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail to: "test@plexm.com", from: "test@launchapp.com"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

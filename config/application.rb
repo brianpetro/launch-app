@@ -22,5 +22,19 @@ module LaunchApp
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    # use mandrill in development and production
+    unless Rails.env.test?
+      # mandrill smtp config
+      ActionMailer::Base.smtp_settings = {
+        :port =>           '587',
+        :address =>        'smtp.mandrillapp.com',
+        :user_name =>      ENV['MANDRILL_USERNAME'],
+        :password =>       ENV['MANDRILL_APIKEY'],
+        :domain =>         'heroku.com',
+        :authentication => :plain
+      }
+      ActionMailer::Base.delivery_method = :smtp
+    end
   end
 end
