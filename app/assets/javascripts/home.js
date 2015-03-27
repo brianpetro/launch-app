@@ -47,6 +47,9 @@ $(function(){
 
     // remove 'msg' parameter for cleaner presentation
     var clean_url = removeUrlParameter(location.href, 'msg');
+    // don't leave a trailing question mark if removing only param
+    clean_url = clean_url.replace(/\?+$/, "");
+    // change URL without reloading or adding page to history
     history.replaceState({}, '', clean_url);
   }
 
