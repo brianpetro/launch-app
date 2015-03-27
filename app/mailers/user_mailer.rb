@@ -5,10 +5,9 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.confirm.subject
   #
-  def confirm
-    @greeting = "Hi"
-
-    mail to: "test@plexm.com", from: "test@launchapp.com"
+  def confirm(user)
+    @user = user
+    mail to: user.email, from: ENV['FROM_EMAIL'], subject: 'Confirm your email to complete request'
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml

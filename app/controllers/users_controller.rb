@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        UserMailer.confirm(@user).deliver_now!
         format.html { redirect_to root_path(msg: 'Confirm your email to complete request.') }
         format.json { render :show, status: :created, location: @user }
       else
@@ -16,6 +17,12 @@ class UsersController < ApplicationController
   end
 
   def confirm
+    if user = User.read_access_token(params[:signature])
+      user.update! confirmed: true
+      redirect_to root_path(msg: 'Email confirmed! Request complete.')
+    else
+      render text: "Invalid Link"
+    end
   end
 
   private
