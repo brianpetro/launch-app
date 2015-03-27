@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  post 'users/create'
+  post 'users' => 'users#create', as: 'users'
   get 'confirm/user/:signature' => 'users#confirm', as: 'confirm_user'
 
   # The priority is based upon order of creation: first created -> highest priority.

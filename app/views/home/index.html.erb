@@ -1,2 +1,26 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="row">
+  <div class="col-sm-12 text-center">
+    <h1>Lorem ipsum dolor sit amet amet mollis mentitum vis ea quis iusto pertinacia</h1>
+  </div>
+  <div class="col-sm-4 col-sm-offset-4">
+    <div class="panel panel-primary">
+      <div class="panel-heading">
+        <div class="panel-title">
+          Request an Invite
+        </div>
+      </div>
+      <div class="panel-body">
+        <%= form_for @user do |f| %>
+          <div class="form-group">
+            <%= f.label :email %>:
+            <%= f.text_field :email, class: 'form-control' %>
+          </div>
+          <div class="form-group text-right">
+            <%= f.hidden_field :tracker %>
+            <%= f.submit 'Submit', class: 'btn btn-primary' %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
