@@ -19,7 +19,7 @@
           </div>
           <div class="form-group text-right">
             <%= f.hidden_field :tracker %>
-            <%= f.submit 'Submit', class: 'btn btn-primary' %>
+            <%= f.submit 'Submit', class: 'btn btn-primary', data: { disable_with: 'Submitting...' } %>
           </div>
         <% end %>
       </div>
