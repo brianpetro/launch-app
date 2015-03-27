@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  test "should get create" do
-    get :create
+  test "should post create" do
+    post :create
     assert_response :success
   end
 

@@ -9,3 +9,9 @@ Production api key should be handled responsibly(use 'heroku config:set' feature
 
 === Split Testing
 Split tests are run by injecting a piece of JavaScript that adjusts the page as required.
+
+
+== Todo
+
+=== Tests
+- JavaScript should set user_tracker input value to 'i' parameter 
