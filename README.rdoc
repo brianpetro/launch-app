@@ -14,7 +14,13 @@ Split tests are run by injecting a piece of JavaScript that adjusts the page as 
 Use URL params to serve alerts/messages/notifications to user. Anticipating page delivery via CDN.
 - 'msg' param: displays alert box with value on the primary panel.
 
+=== Tracking Email Submissions
+URL parameter 'i' is the default tracking parameter. The User.tracker attribute will be set as the parameter's value if present.
+- Example URL 'http://launchapp.example.com/?i=my-facebook'
+
+
 == Todo
 
 === Tests
 - JavaScript should set user_tracker input value to 'i' parameter 
+- if URL param 'msg' is present, JS should display alert box with value
