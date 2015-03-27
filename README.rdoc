@@ -1,7 +1,7 @@
 == README
 
 === API/Secret Keys
-Local api keys are kept in a '.env' file that is not committed to the git repo. The 'keys.env.example' file is provided as boilerplate.
+Local api keys are kept in a '.env' file that is not committed to the git repo. The '.env.example' file is provided as boilerplate.
 
 Production api key should be handled responsibly(use 'heroku config:set' feature) and not commited to git.
 
@@ -24,3 +24,6 @@ URL parameter 'i' is the default tracking parameter. The User.tracker attribute 
 === Tests
 - JavaScript should set user_tracker input value to 'i' parameter 
 - if URL param 'msg' is present, JS should display alert box with value
+
+=== DEPRECATED
+- figure out situation with DEPRECATED _path in mailer views, in favor of _url
