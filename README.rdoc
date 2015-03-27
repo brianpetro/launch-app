@@ -10,6 +10,9 @@ Production api key should be handled responsibly(use 'heroku config:set' feature
 === Split Testing
 Split tests are run by injecting a piece of JavaScript that adjusts the page as required.
 
+=== Alerts/Notifications
+Use URL params to serve alerts/messages/notifications to user. Anticipating page delivery via CDN.
+- 'msg' param: displays alert box with value on the primary panel.
 
 == Todo
 
