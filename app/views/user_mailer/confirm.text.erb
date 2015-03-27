@@ -1,3 +1,3 @@
 Click the link or copy & paste it into your browser to confirm your email.
 
-> <%="#{(ENV['PRODUCTION_DOMAIN'] if Rails.env.production?) || 'http://127.0.0.1:3000'}#{confirm_user_path(@user.access_token)}" %>
+> <%="#{(ENV['PRODUCTION_DOMAIN'] if Rails.env.production?) || 'http://127.0.0.1:3000'}#{confirm_user_url(@user.access_token, only_path: true)}" %>
