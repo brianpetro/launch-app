@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   validates :email, presence: true
+  before_save :send_confirmation 
 
   # Token system based on Active Support Message Verifier
   # ref: http://ngauthier.com/2013/01/rails-unsubscribe-with-active-support-message-verifier.html
@@ -18,5 +19,10 @@ class User < ActiveRecord::Base
   def self.create_access_token(user)
     verifier.generate(user.id)
   end
+
+  private
+    def send_confirmation
+      UserMailer.confirm(@user).deliver_now!
+    end
 
 end

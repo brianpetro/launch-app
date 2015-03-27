@@ -6,7 +6,6 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        UserMailer.confirm(@user).deliver_now!
         format.html { redirect_to root_path(msg: 'Confirm your email to complete request.') }
         format.json { render :show, status: :created, location: @user }
       else
