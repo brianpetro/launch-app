@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   validates :email, presence: true
-  after_create :send_confirmation 
+  validates :email, format: /@/
+  before_create :send_confirmation 
 
   # Token system based on Active Support Message Verifier
   # ref: http://ngauthier.com/2013/01/rails-unsubscribe-with-active-support-message-verifier.html
@@ -11,18 +12,20 @@ class User < ActiveRecord::Base
     ActiveSupport::MessageVerifier.new(Rails.application.secrets[:secret_key_base])
   end
   def self.read_access_token(signature)
-    id = verifier.verify(signature)
-    User.find id
+    email = verifier.verify(signature)
+    User.where(email: email).last
   rescue ActiveSupport::MessageVerifier::InvalidSignature
     nil
   end
   def self.create_access_token(user)
-    verifier.generate(user.id)
+    verifier.generate(user.email)
   end
 
   private
     def send_confirmation
       UserMailer.confirm(self).deliver_now!
+    rescue Net::SMTPServerBusy
+      false
     end
 
 end

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
         format.html { redirect_to root_path(msg: 'Confirm your email to complete request.') }
         format.json { render :show, status: :created, location: @user }
       else
-        format.html { redirect_to root_path(msg: 'Unable to complete request.') }
+        format.html { redirect_to root_path(msg: 'Unable to complete request. Check email address.') }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -18,7 +18,7 @@ class UsersController < ApplicationController
   def confirm
     if user = User.read_access_token(params[:signature])
       user.update! confirmed: true
-      redirect_to root_path(msg: 'Email confirmed! Request complete.')
+      redirect_to root_path(msg: "Confirmed #{user.email}! Request complete.")
     else
       render text: "Invalid Link"
     end
