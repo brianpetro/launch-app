@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   validates :email, presence: true
   validates :email, format: /@/
+  validates_uniqueness_of :email
   before_create :send_confirmation 
 
   # Token system based on Active Support Message Verifier
