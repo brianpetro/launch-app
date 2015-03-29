@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
     def send_confirmation
       UserMailer.confirm(self).deliver_now!
     rescue Net::SMTPServerBusy
+      self.errors.add(:email, 'invalid. Unable to send confirmation to that address.')
       false
     end
 

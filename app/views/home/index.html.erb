@@ -10,11 +10,22 @@
         </div>
       </div>
       <div class="panel-body">
-        <div class="alert alert-warning" role="alert" style="display: none">
+        <div class="alert alert-info" role="alert" style="display: none">
         </div>
         <%= form_for @user do |f| %>
+          <% if @user.errors.any? %>
+            <div id="error_explanation" class="alert alert-danger">
+              <p><b><%= pluralize(@user.errors.count, "error") %></b> prohibited this request from being saved:</p>
+
+              <ul>
+              <% @user.errors.full_messages.each do |message| %>
+                <li><b><%= message %></b></li>
+              <% end %>
+              </ul>
+            </div>
+          <% end %>
           <div class="form-group">
-            <%= f.label :email %>:
+            <%= f.label :email, 'Email:' %>
             <%= f.text_field :email, class: 'form-control' %>
           </div>
           <div class="form-group text-right">
