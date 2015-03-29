@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  user_mailer:
+    confirm.subject: "Confirm your email to complete request"
+    welcome.subject: "Thanks for requesting an invitation!"
