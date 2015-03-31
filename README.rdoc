@@ -5,6 +5,13 @@ Local api keys are kept in a '.env' file that is not committed to the git repo. 
 
 Production api key should be handled responsibly(use 'heroku config:set' feature) and not commited to git.
 
+=== Dotenv Values to Set
+- Domain
+- CDN Domain
+- Mandrill API key and username
+- from email
+
+
 === Sass/Scss is used for CSS assets
 
 === Split Testing
