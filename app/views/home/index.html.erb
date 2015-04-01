@@ -14,9 +14,11 @@
       <div class="panel-body">
         <div class="alert alert-info" role="alert" style="display: none">
         </div>
-        <%= form_for @user do |f| %>
+        <div class="alert alert-danger" role="alert" style="display: none">
+        </div>
+        <%= form_for @user, remote: true, html: {"data-type" => 'json'} do |f| %>
           <% if @user.errors.any? %>
-            <div id="error_explanation" class="alert alert-danger">
+            <div class="alert alert-danger" role="alert">
               <p><b><%= pluralize(@user.errors.count, "error") %></b> prohibited this request from being saved:</p>
 
               <ul>
@@ -35,6 +37,50 @@
             <%= f.submit 'Submit', class: 'btn btn-primary', data: { disable_with: 'Submitting...' } %>
           </div>
         <% end %>
+        <div id="share_links" class="text-center">
+          <ul class="list-inline">
+            <li>
+              <a href="" target="new" onclick="window.open(this.href, 'newwindow', 'width=600, height=600'); return false;">
+                <span class="fa-stack fa-2x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x" style="color:#FFFFFF"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="" target="new" onclick="window.open(this.href, 'newwindow', 'width=600, height=600'); return false;">
+                <span class="fa-stack fa-2x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-facebook fa-stack-1x" style="color:#FFFFFF"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="" target="new" onclick="window.open(this.href, 'newwindow', 'width=600, height=600'); return false;">
+                <span class="fa-stack fa-2x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x" style="color:#FFFFFF"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="" target="new">
+                <span class="fa-stack fa-2x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-reddit fa-stack-1x" style="color:#FFFFFF"></i>
+                </span>
+              </a>
+            </li>
+            <li>
+              <a href="" target="new" onclick="window.open(this.href, 'newwindow', 'width=600, height=600'); return false;">
+                <span class="fa-stack fa-2x">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-google-plus fa-stack-1x" style="color:#FFFFFF"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>

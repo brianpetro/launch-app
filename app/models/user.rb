@@ -25,10 +25,10 @@ class User < ActiveRecord::Base
 
   private
     def send_confirmation
-      UserMailer.confirm(self).deliver_now!
+      UserMailer.confirm(self).deliver_now! if Rails.env.production?
     end
     def send_welcome
-      UserMailer.welcome(self).deliver_now!
+      UserMailer.welcome(self).deliver_now! if Rails.env.production?
     rescue Net::SMTPServerBusy
       self.errors.add(:email, 'invalid. Unable to send emails to that address.')
       false

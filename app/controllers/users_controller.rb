@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { redirect_to root_path(msg: 'Confirm your email to complete request.') }
-        format.json { render :show, status: :created, location: @user }
+        format.json { render json: {email: @user.email}.to_json }
       else
         format.html { render 'home/index' }
         format.json { render json: @user.errors, status: :unprocessable_entity }

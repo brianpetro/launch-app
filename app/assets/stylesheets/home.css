@@ -17,3 +17,7 @@ html, body {
   color: #E6E6E6;
   font-weight: 700;
 }
+
+#share_links .fa-stack:hover {
+  text-shadow: 0 7px 10px rgba(0,0,0,.23),5px 7px 10px rgba(0,0,0,.16);
+}

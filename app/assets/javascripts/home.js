@@ -33,6 +33,10 @@ var removeUrlParameter = function (url, parameter) {
     return url;
   }
 }
+var clearAlerts = function () {
+  // clear all past alerts
+  $('.alert').text('').hide();
+}
 
 $(function(){
   // update hidden input if tracker value present
@@ -53,4 +57,22 @@ $(function(){
     history.replaceState({}, '', clean_url);
   }
 
+  // handle UJS remote form submission
+  $('form#new_user').on('ajax:success', function(event, data, status, xhr) {
+    clearAlerts();
+    // hide form
+    $(this).hide();
+    // build error message, append to alert-info and show alert
+    var success_message = 'Confirm your email('+data['email']+') to complete request.';
+    $('.alert-info').append(success_message).show();
+  });
+  $('form#new_user').on('ajax:error', function(event, xhr, status, error) {
+    clearAlerts();
+    // build error message, append to alert-danger and show alert
+    var error_json = JSON.parse(xhr.responseText);
+    var error_message = 'Submit failed: Email '+error_json['email'][0]+'.';
+    $('.alert-danger').append(error_message).show();
+  });
+
 })
+
