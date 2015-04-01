@@ -12,7 +12,13 @@ Production api key should be handled responsibly(use 'heroku config:set' feature
 - from email
 
 
-=== Sass/Scss is used for CSS assets
+=== CSS Assets
+
+==== Bootstrap 3.3.4
+Served via vendor/assets
+
+==== Bootstrap Material Design Theme
+Included via gem: https://github.com/Aufree/bootstrap-material-design
 
 === Split Testing
 Split tests are run by injecting a piece of JavaScript that adjusts the page as required.
