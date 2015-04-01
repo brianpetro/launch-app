@@ -20,6 +20,9 @@ Served via vendor/assets
 ==== Bootstrap Material Design Theme
 Included via gem: https://github.com/Aufree/bootstrap-material-design
 
+==== Font Awesome 4.3
+Included via font-awesome-rails gem
+
 === Split Testing
 Split tests are run by injecting a piece of JavaScript that adjusts the page as required.
 
