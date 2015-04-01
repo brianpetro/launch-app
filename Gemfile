@@ -6,10 +6,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.2.1'
 # Use postgresql as the database for Active Record
 gem 'pg'
-# Use gem to include bootstrap
-gem 'bootstrap-sass', '~> 3.3.4'
-# Use SCSS for stylesheets
-gem 'sass-rails', '~> 5.0'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -45,3 +42,6 @@ end
 
 # required for heroku production server
 gem 'rails_12factor', group: :production
+
+# material design bootstrap theme
+gem 'bootstrap-material-design'
