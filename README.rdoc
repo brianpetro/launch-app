@@ -11,6 +11,10 @@ Production api key should be handled responsibly(use 'heroku config:set' feature
 - Mandrill API key and username
 - from email
 
+=== Social Networks / Share Links
+
+==== Share Link Config
+Set required variable values in /app/helpers/home_helper.rb
 
 === CSS Assets
 
