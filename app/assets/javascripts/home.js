@@ -12,10 +12,7 @@ var getParameterByName = function (name) {
 // set var i_tracker to value of 'i' parameter
 var i_tracker = getParameterByName('i');
 
-// display messages on cached pages via URL 'msg' parameter
-var url_msg = getParameterByName('msg');
-
-// remove URL from parameter
+// remove URL parameter
 // ref: http://stackoverflow.com/a/1634841/1885896
 var removeUrlParameter = function (url, parameter) {
   var urlparts= url.split('?');   
@@ -44,19 +41,6 @@ $(function(){
   // update hidden input if tracker value present
   if ((i_tracker.length > 0) && (i_tracker.length < 200)){
     $('#user_tracker').val(i_tracker);
-  }
-
-  // if URL param 'msg' is present...
-  if (url_msg.length > 0){
-    // inject text(param value) into alert box on primary panel
-    $('.panel-primary .panel-body .alert').text(url_msg).show();
-
-    // remove 'msg' parameter for cleaner presentation
-    var clean_url = removeUrlParameter(location.href, 'msg');
-    // don't leave a trailing question mark if removing only param
-    clean_url = clean_url.replace(/\?+$/, "");
-    // change URL without reloading or adding page to history
-    history.replaceState({}, '', clean_url);
   }
 
   // handle UJS remote form submission
