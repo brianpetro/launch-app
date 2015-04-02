@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery/jquery.cookie.js
 //= require jquery_ujs
 //= require bootstrap-material-design
 //= require_tree .

@@ -34,6 +34,8 @@ Split tests are run by injecting a piece of JavaScript that adjusts the page as 
 URL parameter 'i' is the default tracking parameter. The User.tracker attribute will be set as the parameter's value if present.
 - Example URL 'http://launchapp.example.com/?i=my-facebook'
 
+A tracking cookie is store for 3 days when a tracking parameter is used.
+
 
 == Todo
 

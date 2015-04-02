@@ -41,12 +41,21 @@ $(function(){
   if ((i_tracker.length > 0) && (i_tracker.length < 200)){
     // update hidden input if tracker value present
     $('#user_tracker').val(i_tracker);
+    // store tracking cookie for 3 days
+    // ref: https://github.com/carhartl/jquery-cookie
+    $.cookie('i_track', i_tracker, { expires: 3 });
     // remove 'i' parameter for cleaner presentation
     var clean_url = removeUrlParameter(location.href, 'i');
     // don't leave a trailing question mark if removing the only param
     clean_url = clean_url.replace(/\?+$/, "");
     // change URL without reloading or adding page to history
     history.replaceState({}, '', clean_url);
+  }
+
+  // set form tracking input if tracking cookie present
+  var i_track_cookie = $.cookie('i_track');
+  if (typeof i_track_cookie !== undefined) {
+    $('#user_tracker').val(i_track_cookie);
   }
 
   // uses jquery-UJS remote form submission
