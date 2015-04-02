@@ -38,7 +38,9 @@ var clearAlerts = function () {
   $('.alert').text('').hide();
 }
 
+// runs block/function after jQuery loads
 $(function(){
+
   // update hidden input if tracker value present
   if ((i_tracker.length > 0) && (i_tracker.length < 200)){
     $('#user_tracker').val(i_tracker);
