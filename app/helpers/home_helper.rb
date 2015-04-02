@@ -12,7 +12,7 @@ module HomeHelper
     return "https://twitter.com/intent/tweet?#{tweet_params}"
   end
   def facebook_share_url
-    facebook_app_id = ENV['FACEBOOK_APP_ID']
+    facebook_app_id = "1447383955545444"
     share_url = "http://#{ENV['PRODUCTION_DOMAIN']}"
     post_params = {
       app_id: facebook_app_id, 

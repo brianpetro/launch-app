@@ -60,6 +60,8 @@ $(function(){
   // handle UJS remote form submission
   $('form#new_user').on('ajax:success', function(event, data, status, xhr) {
     clearAlerts();
+    // show share links
+    $('#share_links').show();
     // hide form
     $(this).hide();
     // build error message, append to alert-info and show alert

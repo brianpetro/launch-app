@@ -37,10 +37,13 @@
             <%= f.submit 'Submit', class: 'btn btn-primary', data: { disable_with: 'Submitting...' } %>
           </div>
         <% end %>
-        <div id="share_links" class="text-center">
+        <div id="share_links" class="text-center" style="display:none;">
+          <h2>
+            Share to Get Invited Sooner!
+          </h2>
           <ul class="list-inline">
             <li>
-              <a href="<%= twitter_share_url %>" target="new" onclick="window.open(this.href, 'newwindow', 'width=600, height=600'); return false;">
+              <a href="<%= twitter_share_url %>" target="new" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;">
                 <span class="fa-stack fa-2x">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-twitter fa-stack-1x" style="color:#FFFFFF"></i>
@@ -48,7 +51,7 @@
               </a>
             </li>
             <li>
-              <a href="<%= facebook_share_url %>" target="new" onclick="window.open(this.href, 'newwindow', 'width=600, height=600'); return false;">
+              <a href="<%= facebook_share_url %>" target="new" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;">
                 <span class="fa-stack fa-2x">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-facebook fa-stack-1x" style="color:#FFFFFF"></i>
@@ -56,7 +59,7 @@
               </a>
             </li>
             <li>
-              <a href="<%= linkedin_share_url %>" target="new" onclick="window.open(this.href, 'newwindow', 'width=600, height=600'); return false;">
+              <a href="<%= linkedin_share_url %>" target="new" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;">
                 <span class="fa-stack fa-2x">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-linkedin fa-stack-1x" style="color:#FFFFFF"></i>
@@ -72,7 +75,7 @@
               </a>
             </li>
             <li>
-              <a href="<%= google_share_url %>" target="new" onclick="window.open(this.href, 'newwindow', 'width=600, height=600'); return false;">
+              <a href="<%= google_share_url %>" target="new" onclick="window.open(this.href, '_blank', 'width=600, height=600'); return false;">
                 <span class="fa-stack fa-2x">
                   <i class="fa fa-circle fa-stack-2x"></i>
                   <i class="fa fa-google-plus fa-stack-1x" style="color:#FFFFFF"></i>
