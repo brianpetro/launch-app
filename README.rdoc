@@ -1,5 +1,6 @@
 == README
 
+=== Built for deployment on Heroku
 === Demo: https://mysterious-bastion-5466.herokuapp.com/
 
 === API/Secret Keys
