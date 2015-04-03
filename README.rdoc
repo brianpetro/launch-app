@@ -18,6 +18,9 @@ Production api key should be handled responsibly(use 'heroku config:set' feature
 ==== Share Link Config
 Set required variable values in /app/helpers/home_helper.rb
 
+=== Meta Tags
+Uses metamagic. See https://github.com/lassebunk/metamagic
+
 === CSS Assets
 
 ==== Bootstrap 3.3.4

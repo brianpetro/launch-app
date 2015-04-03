@@ -48,3 +48,6 @@ gem 'bootstrap-material-design'
 
 # font-awesome
 gem "font-awesome-rails"
+
+# Metamagic: SEO, Facebook, Twitter and custom meta tags
+gem 'metamagic'
