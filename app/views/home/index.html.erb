@@ -1,8 +1,22 @@
 <%
 meta title: "Uber for Everything",
-   description: "Request an invite to start Ubering everything sooner! Built with love by Brian Petro.",
-   keywords: %w(Launch Uber Everything Template)
- %>
+  description: "Request an invite to start Ubering everything sooner! Built with love by Brian Petro.",
+  keywords: %w(Launch Uber Everything Template),
+  og: {
+    title: "Attn Facebook: Uber for Everything",
+    description: "Request an invite via Facebook to start Ubering Everything!",
+    type: "website",
+    image: "",
+    url: "http://#{ENV['PRODUCTION_DOMAIN']}"
+  },
+  twitter: {
+    title: "Uber Everything with a Tweet!",
+    description: "Request an invite via Twitter to start Ubering Everything!",
+    card: "summary_large_image",
+    site: "@brianpetro_",
+    creator: "@brianpetro_"
+  } 
+%>
 <div id="top-row" class="row">
   <div class="col-sm-12 text-center">
     <h1>

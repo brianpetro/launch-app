@@ -19,7 +19,9 @@ Production api key should be handled responsibly(use 'heroku config:set' feature
 Set required variable values in /app/helpers/home_helper.rb
 
 === Meta Tags
-Uses metamagic. See https://github.com/lassebunk/metamagic
+- Uses metamagic. See https://github.com/lassebunk/metamagic
+- Open graph http://ogp.me/
+- Twitter cards(and open graph fallback) https://dev.twitter.com/cards/markup
 
 === CSS Assets
 
