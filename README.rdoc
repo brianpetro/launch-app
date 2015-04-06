@@ -8,6 +8,12 @@ Local api keys are kept in a '.env' file that is not committed to the git repo. 
 
 Production api key should be handled responsibly(use 'heroku config:set' feature) and not commited to git.
 
+==== Required ENV to Work
+- MANDRILL_APIKEY
+- MANDRILL_USERNAME
+- FROM_EMAIL
+- PRODUCTION_DOMAIN
+
 === Dotenv Values to Set
 - Domain
 - CDN Domain
