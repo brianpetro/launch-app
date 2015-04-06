@@ -1,21 +1,24 @@
+/* full-screen bg image */
 html, body {
   height: 100%;
+  background-image: url('https://ununsplash.imgix.net/37/QAdTsSj8TOOWzlyLn3Rg_14248396556_aefcd9a926_o.jpg?fit=crop&fm=jpg&h=1285&q=75&w=2000');
+  background-position: fixed;
 }
 .container-fluid {
   background-color: #787878;
 }
 
-/* full-screen bg image */
-#top-row {
-  height: 100%;
-  padding-top: 100px;
-  /* background-image: url('https://unsplash.imgix.net/photo-1426200830301-372615e4ac54?fit=crop&fm=jpg&h=1380&q=75&w=2000'); */
-  background-image: url('https://ununsplash.imgix.net/37/QAdTsSj8TOOWzlyLn3Rg_14248396556_aefcd9a926_o.jpg?fit=crop&fm=jpg&h=1285&q=75&w=2000');
+#header {
+  margin-top: 100px;
 }
 /* main header text */
-#top-row h1 {
+#header h1, #header h2 {
   color: #E6E6E6;
   font-weight: 700;
+  margin: 5px;
+}
+#header h2 {
+  margin-bottom: 20px;
 }
 
 #share_links .fa-stack:hover {
