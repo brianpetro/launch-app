@@ -16,9 +16,12 @@ Production api key should be handled responsibly(use 'heroku config:set' feature
 
 === Dotenv Values to Set
 - Domain
-- CDN Domain
 - Mandrill API key and username
 - from email
+
+=== CDN Configuration
+- Allowed HTTP methods: GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE
+
 
 === Social Networks / Share Links
 
