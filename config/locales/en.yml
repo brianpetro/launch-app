@@ -21,5 +21,7 @@
 
 en:
   user_mailer:
-    confirm.subject: "Confirm your email to complete request"
-    welcome.subject: "Thanks for requesting an invitation!"
+    confirm:
+      subject: "Confirm your email to complete request"
+    welcome:
+      subject: "Thanks for requesting an invitation!"

@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  email: MyString
+  email: unconfirmed@plexm.com
   confirmed: false
-  tracker: MyString
+  tracker: nil
   split_test_id: 1
 
 two:
-  email: MyString
-  confirmed: false
+  email: confirmed@plexm.com
+  confirmed: true
   tracker: MyString
   split_test_id: 1
