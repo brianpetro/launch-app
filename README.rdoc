@@ -1,7 +1,7 @@
 == README
 
 === Built for deployment on Heroku
-=== Demo: https://mysterious-bastion-5466.herokuapp.com/
+=== Demo: http://launch-app.plexm.com
 
 === API/Secret Keys
 Local api keys are kept in a '.env' file that is not committed to the git repo. The '.env.example' file is provided as boilerplate.
@@ -21,6 +21,7 @@ Production api key should be handled responsibly(use 'heroku config:set' feature
 
 === CDN Configuration
 - Allowed HTTP methods: GET, HEAD, OPTIONS, PUT, POST, PATCH, DELETE
+- simple AWS CloudFront CORS setup: http://blog.cloud66.com/cross-origin-resource-sharing-cors-blocked-for-cloudfront-in-rails/
 
 
 === Social Networks / Share Links
