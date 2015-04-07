@@ -12,6 +12,9 @@ var getParameterByName = function (name) {
 // set var i_tracker to value of 'i' parameter
 var i_tracker = getParameterByName('i');
 
+// deliver messages via HTTP URL when page is cached
+var url_msg = getParameterByName('msg');
+
 // remove URL parameter
 // ref: http://stackoverflow.com/a/1634841/1885896
 var removeUrlParameter = function (url, parameter) {
@@ -25,6 +28,10 @@ var removeUrlParameter = function (url, parameter) {
       }
     }
     url= urlparts[0]+'?'+pars.join('&');
+    // don't leave a trailing question mark if removing the only param
+    url = url.replace(/\?+$/, "");
+    // change URL without reloading or adding page to history
+    history.replaceState({}, '', url);
     return url;
   } else {
     return url;
@@ -45,13 +52,8 @@ $(function(){
     // ref: https://github.com/carhartl/jquery-cookie
     $.cookie('i_track', i_tracker, { expires: 3 });
     // remove 'i' parameter for cleaner presentation
-    var clean_url = removeUrlParameter(location.href, 'i');
-    // don't leave a trailing question mark if removing the only param
-    clean_url = clean_url.replace(/\?+$/, "");
-    // change URL without reloading or adding page to history
-    history.replaceState({}, '', clean_url);
+    removeUrlParameter(location.href, 'i');
   }
-
   // set form tracking input if tracking cookie present
   var i_track_cookie = $.cookie('i_track');
   if (typeof i_track_cookie !== undefined) {
@@ -80,6 +82,13 @@ $(function(){
     // append to alert-danger and show alert
     $('.alert-danger').append(error_message).show();
   });
+
+  // display URL message if present
+  if ((url_msg.length > 0) && (url_msg.length < 400)){
+    $('.alert-info').text(url_msg).show();
+    // remove 'msg' parameter for cleaner presentation
+    removeUrlParameter(location.href, 'msg');
+  }
 
 })
 
