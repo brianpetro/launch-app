@@ -45,6 +45,9 @@ var clearAlerts = function () {
 // runs block/function after jQuery loads
 $(function(){
 
+  // update form action to use correct URL if JS enabled
+  $('form#new_user').prop('action', '/users.json');
+
   if ((i_tracker.length > 0) && (i_tracker.length < 200)){
     // update hidden input if tracker value present
     $('#user_tracker').val(i_tracker);
