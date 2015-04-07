@@ -20,7 +20,7 @@ class UsersController < ApplicationController
   def confirm
     if user = User.read_access_token(params[:signature])
       user.update! confirmed: true
-      redirect_to root_path(msg: "Confirmed #{user.email}! Request complete.")
+      redirect_to "#{('http://'+ENV['PRODUCTION_DOMAIN']) if Rails.env.production?}#{root_path(msg: "Confirmed #{user.email}! Request complete."}")
     else
       render text: "Invalid Link"
     end
