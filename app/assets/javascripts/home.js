@@ -41,6 +41,16 @@ var clearAlerts = function () {
   // clear all past alerts
   $('.alert').text('').hide();
 }
+var showSuccessAlert = function (text) {
+  // append to alert-info and show alert
+  $('.alert-info').append(text).show();
+  window.scrollTo(0, 0);
+}
+var showErrorAlert = function (text) {
+  // append to alert-danger and show alert
+  $('.alert-danger').append(text).show();
+  window.scrollTo(0, 0);
+}
 
 // runs block/function after jQuery loads
 $(function(){
@@ -65,25 +75,23 @@ $(function(){
 
   // uses jquery-UJS remote form submission
   // ref: https://github.com/rails/jquery-ujs/wiki
-  $('form#new_user').on('ajax:success', function(event, data, status, xhr) {
+  $('form.new_user').on('ajax:success', function(event, data, status, xhr) {
     clearAlerts();
     // show share links
     $('#share_links').show();
     // hide form
-    $(this).hide();
+    $('form.new_user').hide();
     // build error message
     var success_message = 'Confirm your email('+data['email']+') to complete request.';
-    // append to alert-info and show alert
-    $('.alert-info').append(success_message).show();
+    showSuccessAlert(success_message);
   });
-  $('form#new_user').on('ajax:error', function(event, xhr, status, error) {
+  $('form.new_user').on('ajax:error', function(event, xhr, status, error) {
     clearAlerts();
     // parse error response
     var error_json = JSON.parse(xhr.responseText);
     // build error message
     var error_message = 'Submit failed: Email '+error_json['email'][0]+'.';
-    // append to alert-danger and show alert
-    $('.alert-danger').append(error_message).show();
+    showErrorAlert(error_message);
   });
 
   // display URL message if present
