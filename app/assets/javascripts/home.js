@@ -52,6 +52,19 @@ var showErrorAlert = function (text) {
   window.scrollTo(0, 0);
 }
 
+
+// update click-to-share URLs with user-id for tracking
+var trackUserShare = function (user_id) {
+  $('.share_url').each(function() {
+    var href = $(this).attr('href');
+    if (href.indexOf(host) >= 0) {
+      new_href = href+'?i=user-'+user_id;
+      $(this).prop('href', new_href);
+      console.log(new_href);
+    }
+  });
+}
+
 // runs block/function after jQuery loads
 $(function(){
 
@@ -84,6 +97,8 @@ $(function(){
     // build error message
     var success_message = 'Confirm your email('+data['email']+') to complete request.';
     showSuccessAlert(success_message);
+    // add user-id tracker to social click-to-share links
+    trackUserShare(data['id']);
   });
   $('form.new_user').on('ajax:error', function(event, xhr, status, error) {
     clearAlerts();

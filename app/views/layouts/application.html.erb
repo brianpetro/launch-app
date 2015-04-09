@@ -6,6 +6,9 @@
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
+  <script>
+    var host = <%= "'#{ENV['PRODUCTION_DOMAIN']}'".html_safe %>;
+  </script>
 </head>
 <body class="container-fluid">
 <%= yield %>
