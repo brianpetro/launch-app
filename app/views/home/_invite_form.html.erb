@@ -1,0 +1,21 @@
+<%= form_for @user, remote: true, html: {"data-type" => 'json'} do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <p><b><%= pluralize(@user.errors.count, "error") %></b> prohibited this request from being saved:</p>
+
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+        <li><b><%= message %></b></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="form-group">
+    <%= f.label :email, 'Email:', class: 'sr-only' %>
+    <%= f.text_field :email, class: 'form-control input-lg', placeholder: 'bob@example.com' %>
+  </div>
+  <div class="form-group text-right">
+    <%= f.hidden_field :tracker %>
+    <%= f.submit 'Submit', class: 'btn btn-primary', data: { disable_with: 'Submitting...' } %>
+  </div>
+<% end %>
