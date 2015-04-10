@@ -13,4 +13,8 @@ class UserMailer < ApplicationMailer
     @user = user
     mail to: user.email, from: ENV['FROM_EMAIL']
   end
+  def report(users)
+    @users = users
+    mail to: ENV['REPORT_EMAIL'], from: ENV['FROM_EMAIL'], subject: "#{ENV['PRODUCTION_DOMAIN']} Daily Report"
+  end
 end

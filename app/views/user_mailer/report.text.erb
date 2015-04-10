@@ -1,0 +1,8 @@
+Total users: <%= User.count %>
+New users in past 24 hours: <%= @users.count %>
+
+New User Overview
+===
+<% @users.each do |user| %>
+- <%= user.email+((" (tracker: #{user.tracker})" unless user.tracker.blank?) || '') %>
+<% end %>
