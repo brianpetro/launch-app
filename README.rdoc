@@ -1,5 +1,7 @@
 == README
 
+{<img src="https://badges.gitter.im/Join%20Chat.svg" alt="Join the chat at https://gitter.im/brianpetro/launch-app">}[https://gitter.im/brianpetro/launch-app?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge]
+
 === Built for deployment on Heroku
 === Demo: http://launch-app.plexm.com
 
