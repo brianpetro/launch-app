@@ -13,5 +13,5 @@
 //= require jquery
 //= require jquery/jquery.cookie.js
 //= require jquery_ujs
-//= require bootstrap-material-design
-//= require_tree .
+//= require bootstrap/bootstrap.min.js
+//= require home.js

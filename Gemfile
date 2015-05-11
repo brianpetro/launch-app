@@ -43,9 +43,6 @@ end
 # required for heroku production server
 gem 'rails_12factor', group: :production
 
-# material design bootstrap theme
-gem 'bootstrap-material-design'
-
 # font-awesome
 gem "font-awesome-rails"
 
